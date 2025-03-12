@@ -53,7 +53,7 @@
   
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
-                  <a href="https://github.com/Yansixu/">Sixu Yan</a><sup>1,2</sup>&nbsp;&nbsp;&nbsp;</span>
+                  <a href="https://github.com/Yansixu/">Sixu Yan</a><sup>1</sup>&nbsp;&nbsp;&nbsp;</span>
   
                 <span class="author-block">
                   <a href="https://xwcv.github.io/">Xinggang Wang</a><sup>1,✉️</sup>&nbsp;&nbsp;&nbsp;</span> 
@@ -122,7 +122,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Vision Language Models (VLMs) pretrained on Internetscale vision-language data have demonstrated the potential to transfer their knowledge to robotic learning. However, the existing paradigm encounters three critical challenges: (1) expensive inference cost resulting from largescale model parameters, (2) frequent domain shifts caused by mismatched data modalities, and (3) limited capacity to handle past or future experiences. In this work, we propose LiteVLP, a lightweight, memory-based, and general-purpose vision-language policy generation model. LiteVLP is built upon a pre-trained 1B-parameter VLM and fine-tuned on a tiny-scale and conversation-style robotic dataset. Through extensive experiments, we demonstrate that LiteVLP outperforms state-of-the-art vision-language policy on VIMA-Bench, with minimal training time. Furthermore, LiteVLP exhibits superior inference speed while maintaining exceptional high accuracy. In long-horizon manipulation tasks, LiteVLP also shows remarkable memory ability, outperforming the best-performing baseline model by 18.8%. These results highlight LiteVLP as a promising model to integrating the intelligence of VLMs into robotic learning
+              <b>Vision Language Models (VLMs)</b> pretrained on Internetscale vision-language data have demonstrated the potential to transfer their knowledge to robotic learning. However, the existing paradigm encounters three critical challenges: (1) <b>expensive inference cost resulting from largescale model parameters</b>, (2) <b>frequent domain shifts caused by mismatched data modalities</b>, and (3) <b>limited capacity to handle past or future experiences</b>. In this work, we propose <b>LiteVLP</b>, a lightweight, memory-based, and general-purpose vision-language policy generation model. LiteVLP is built upon a pre-trained 1B-parameter VLM and fine-tuned on a tiny-scale and conversation-style robotic dataset. Through extensive experiments, we demonstrate that LiteVLP outperforms state-of-the-art vision-language policy on VIMA-Bench, with minimal training time. Furthermore, LiteVLP exhibits superior inference speed while maintaining exceptional high accuracy. In long-horizon manipulation tasks, LiteVLP also shows remarkable memory ability, outperforming the best-performing baseline model by 18.8%. These results highlight LiteVLP as a promising model to integrating the intelligence of VLMs into robotic learning
             </p>
           </div>
         </div>
@@ -150,11 +150,11 @@
       <!-- Challenges in Mobile Manipulation -->
       <div class="columns is-centered">
         <div class="column is-full-width">
-        <h2 class="title is-3">Challenges in Mobile Manipulation</h2>
+        <h2 class="title is-3">Challenges in Vision Language Policies</h2>
         </div>
       </div>
       <p>
-        Mobile manipulation has been widely applied to tasks such as grasping, placement, and object rearrangement. An ideal motion planner must not only consider the <b>environment's geometry</b> to avoid collisions but also ensure that the generated trajectories are well-suited to the <b>robot's embodiment</b> (joint limits, robot kinematics and base-arm coordination) and capable of successfully completing the <b>specific tasks</b> (grasping or placement objectives). 
+        Integrating pre-trained Large Language Models (LLMs) and VLMs with low-level robotic policies has made significant progress. However, there are three key challenges in existing models. First, fine-tuning pre-trained LLMs and VLMs with robotic data often encounters frequent domin shifts due to the substantial differences between the pre-training web dataset and the fine-tuning robotic dataset. Second, current models suffer from insufficient memory for future or past experiences, making them achieve poor performance for long-horizon manipulation. Third, the large number of model parameters in the backbone network leads to a high computational time, which limits their real-world deployment.
       </p>
       <br>
       <img src="assets/figure/challenges_mm.jpg" style="width:100%; margin-right:auto; margin-left:auto; margin-top:auto;">
@@ -164,6 +164,29 @@
     </div>
     <!--/ Challenges in Mobile Manipulation -->
   </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Challenges in Mobile Manipulation -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+        <h2 class="title is-3">Framework</h2>
+        </div>
+      </div>
+      <p>
+        The LiteVLP framework initiates with multi-observation compression and then projects the image features into the same dimensional space as the text features. Subsequently, the image tokens are interleaved with text tokens and processed by a large language model to generate a text output that includes the end-effector's action. Of note, during the fine-tuning stage, the parameters of ViT are frozen, while the length embedding, the MLP projector and the large language model are trained.
+      </p>
+      <br>
+      <img src="assets/figure/Fig2_model_architecture.pdf" style="width:100%; margin-right:auto; margin-left:auto; margin-top:auto;">
+    </div>
+    <!--/ Challenges in Mobile Manipulation -->
+  </section>
+
+
+
+
+
+
 
   <section class="section">
     <div class="container is-max-desktop">
