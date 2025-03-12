@@ -122,7 +122,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              <b>Vision Language Models (VLMs)</b> pretrained on Internetscale vision-language data have demonstrated the potential to transfer their knowledge to robotic learning. However, the existing paradigm encounters three critical challenges: (1) <b>expensive inference cost resulting from largescale model parameters</b>, (2) <b>frequent domain shifts caused by mismatched data modalities</b>, and (3) <b>limited capacity to handle past or future experiences</b>. In this work, we propose <b>LiteVLP</b>, a lightweight, memory-based, and general-purpose vision-language policy generation model. LiteVLP is built upon a pre-trained 1B-parameter VLM and fine-tuned on a tiny-scale and conversation-style robotic dataset. Through extensive experiments, we demonstrate that LiteVLP outperforms state-of-the-art vision-language policy on VIMA-Bench, with minimal training time. Furthermore, LiteVLP exhibits superior inference speed while maintaining exceptional high accuracy. In long-horizon manipulation tasks, LiteVLP also shows remarkable memory ability, outperforming the best-performing baseline model by 18.8%. These results highlight LiteVLP as a promising model to integrating the intelligence of VLMs into robotic learning
+              Vision Language Models (VLMs) pretrained on Internetscale vision-language data have demonstrated the potential to transfer their knowledge to robotic learning. However, the existing paradigm encounters three critical challenges: (1) expensive inference cost resulting from largescale model parameters, (2) frequent domain shifts caused by mismatched data modalities, and (3) limited capacity to handle past or future experiences. In this work, we propose <b>LiteVLP</b>, a lightweight, memory-based, and general-purpose vision-language policy generation model. LiteVLP is built upon a pre-trained 1B-parameter VLM and fine-tuned on a tiny-scale and conversation-style robotic dataset. Through extensive experiments, we demonstrate that LiteVLP outperforms state-of-the-art vision-language policy on VIMA-Bench, with minimal training time. Furthermore, LiteVLP exhibits superior inference speed while maintaining exceptional high accuracy. In long-horizon manipulation tasks, LiteVLP also shows remarkable memory ability, outperforming the best-performing baseline model by 18.8%. These results highlight LiteVLP as a promising model to integrating the intelligence of VLMs into robotic learning
             </p>
           </div>
         </div>
@@ -147,7 +147,7 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <!-- Challenges in Mobile Manipulation -->
+      <!-- Challenges in Vision Language Policies -->
       <div class="columns is-centered">
         <div class="column is-full-width">
         <h2 class="title is-3">Challenges in Vision Language Policies</h2>
@@ -156,18 +156,13 @@
       <p>
         Integrating pre-trained Large Language Models (LLMs) and VLMs with low-level robotic policies has made significant progress. However, there are three key challenges in existing models. First, fine-tuning pre-trained LLMs and VLMs with robotic data often encounters frequent domin shifts due to the substantial differences between the pre-training web dataset and the fine-tuning robotic dataset. Second, current models suffer from insufficient memory for future or past experiences, making them achieve poor performance for long-horizon manipulation. Third, the large number of model parameters in the backbone network leads to a high computational time, which limits their real-world deployment.
       </p>
-      <br>
-      <img src="assets/figure/challenges_mm.jpg" style="width:100%; margin-right:auto; margin-left:auto; margin-top:auto;">
-      <p>
-        In this work, we aim to design a neural motion planner that considers multiple constraints in mobile manipulation while generating motion trajectories. There are two key challenges to be solved: (1) <b>how to acquire high-quality training data for high-dimensional mobile manipulation</b> and (2) <b>how to effectively integrate multiple constraints into motion generation framework for ensuring physical safety execution</b>.
-      </p>
     </div>
-    <!--/ Challenges in Mobile Manipulation -->
+    <!--/ Challenges in Vision Language Policies -->
   </section>
 
   <section class="section">
     <div class="container is-max-desktop">
-      <!-- Challenges in Mobile Manipulation -->
+      <!-- Framework -->
       <div class="columns is-centered">
         <div class="column is-full-width">
         <h2 class="title is-3">Framework</h2>
@@ -177,9 +172,28 @@
         The LiteVLP framework initiates with multi-observation compression and then projects the image features into the same dimensional space as the text features. Subsequently, the image tokens are interleaved with text tokens and processed by a large language model to generate a text output that includes the end-effector's action. Of note, during the fine-tuning stage, the parameters of ViT are frozen, while the length embedding, the MLP projector and the large language model are trained.
       </p>
       <br>
+      <!-- <img src="assets/figure/Fig2_model_architecture.png" style="width:100%; margin-right:auto; margin-left:auto; margin-top:auto;"> -->
+      <iframe src="assets/figure/Fig2_model_architecture.pdf" width="600" height="400" style="border: none;"></iframe>
+
+    </div>
+    <!--/ Framework -->
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- VIMA-Bench Results -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+        <h2 class="title is-3">VIMA-Bench Results</h2>
+        </div>
+      </div>
+      <p>
+        The LiteVLP framework initiates with multi-observation compression, followed by the incorporation of a length embedding. After that, the image features are projected into the same dimensional space as the text features. Subsequently, the image tokens are interleaved with text tokens and processed by a large language model to generate a text output that includes the end-effector's action. Of note, during the fine-tuning stage, the parameters of ViT are frozen, while the length embedding, the MLP projector and the large language model are trained.
+      </p>
+      <br>
       <img src="assets/figure/Fig2_model_architecture.png" style="width:100%; margin-right:auto; margin-left:auto; margin-top:auto;">
     </div>
-    <!--/ Challenges in Mobile Manipulation -->
+    <!--/ VIMA-Bench Results -->
   </section>
 
 
