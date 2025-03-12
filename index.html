@@ -314,41 +314,48 @@
           width: 60%; /* 表格宽度 */
           border-collapse: collapse; /* 合并边框 */
           font-family: 'Times New Roman', Times, serif;
-          font-size: 20px;
+          font-size: 16px; /* 缩小字体，接近 LaTeX 格式 */
           margin: 0 auto; /* 水平居中 */
       }
   
       th, td {
-          padding: 8px;
+          padding: 4px 8px; /* 减小内边距，缩小行高 */
           text-align: center;
           vertical-align: middle;
-          position: relative; /* 设置为相对定位，确保 ::after 生效 */
+          position: relative; /* 设置为相对定位，确保 ::after 相对于单元格定位 */
+          border: 1px solid black; /* 添加单元格边框，宽度统一 */
       }
   
       /* 顶部线 */
       .top-line {
-          border-top: 2px solid black;
+          border-top: 1.5px solid black; /* 使顶线稍微加粗 */
       }
   
       /* 中间线 */
       .middle-line {
-          border-bottom: 2px solid black;
+          border-bottom: 1.5px solid black; /* 使中间线稍微加粗 */
       }
   
       /* 底部线 */
       .bottom-line {
-          border-bottom: 2px solid black;
+          border-bottom: 1.5px solid black; /* 使底线稍微加粗 */
       }
   
       /* 定义短竖线，使用伪元素生成 */
       .short-separator::after {
-          content: ""; /* 必须设置 content 才能生成伪元素 */
+          content: ""; 
           position: absolute;
-          left: 0; /* 竖线靠右 */
-          top: 25%; /* 垂直位置 */
-          height: 50%; /* 竖线长度（单元格高度的 50%） */
-          width: 2px; /* 竖线宽度 */
+          left: 0; /* 竖线靠左 */
+          top: 20%; /* 调整竖线垂直位置 */
+          height: 60%; /* 竖线长度 */
+          width: 1px; /* 竖线宽度 */
           background-color: black; /* 竖线颜色 */
+      }
+  
+      /* 表头加粗 */
+      th {
+          font-weight: bold;
+          background-color: white;
       }
   </style>
   
@@ -421,6 +428,7 @@
           </tr>
       </tbody>
   </table>
+  
   
     </div>
     <!--/ VIMA-Bench Results -->
