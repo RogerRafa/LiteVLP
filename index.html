@@ -225,15 +225,11 @@
             border-bottom: 2px solid black;
         }
         /* 短竖线：通过伪元素设置短竖线 */
-        .short-separator::after {
-          content: '';
-          display: inline-block;
-          width: 1px;
-          height: 50%; /* 控制竖线长度 */
-          background-color: black;
-          position: absolute;
-          right: 0;
-          top: 25%; /* 竖线垂直居中 */
+        .short-separator {
+          border-right: 1px solid black; /* 右侧生成竖线 */
+          border-top: 0; /* 去掉顶部边框 */
+          border-bottom: 0; /* 去掉底部边框 */
+          height: 60%; /* 控制竖线长度 */
       }
     </style>
     
