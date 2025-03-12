@@ -224,15 +224,12 @@
         .bottom-line {
             border-bottom: 2px solid black;
         }
-         /* 定义短竖线，使用伪元素来生成 */
-        .short-separator::after {
-          content: ''; 
-          position: absolute;
-          width: 1px; /* 竖线宽度 */
-          height: 60%; /* 控制竖线长度 */
-          background-color: black; /* 竖线颜色 */
-          top: 20%; /* 垂直位置调整 */
-          right: 0; /* 将竖线固定在单元格右侧 */
+        /* 短竖线：通过伪元素设置短竖线 */
+        .short-separator {
+          border-right: 1px solid black; /* 右侧生成竖线 */
+          border-top: 0; /* 去掉顶部边框 */
+          border-bottom: 0; /* 去掉底部边框 */
+          height: 2px; /* 控制竖线长度 */
       }
     </style>
     
