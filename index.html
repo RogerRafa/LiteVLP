@@ -196,7 +196,80 @@
         We evaluate our method on VIMA-Bench and compare its performance against other models trained on datasets of different sizes. The results are shown in the following table. We demonstrate that LiteVLP achieves highly competitive performance, achieving a success rate of 84.2% on L1, 78.1% on L2, and 75.4% on L3, using only 1.2% of the VIMA dataset. This performance is comparable to the state-of-the-art model VIMA, which achieves 81.5% on L1, 81.5% on L2, and 78.7% on L3 when trained on the full dataset. Additionally, our model significantly outperforms other VLMs fine-tuned on our small dataset, such as LLaRA-7B and Mipha-3B. These results successfully indicate that LiteVLP can rapidly adapt to robotic manipulation and demonstrate highly competitive performance when fine-tuned with visuomotor instruction in a small robotic dataset. Note that the suffix '-m' in model names denotes multi-image input, while '-s' indicates single-image input.
       </p>
       <br>
-      <img src="assets/figure/baseline.png" style="width:60%; margin:auto; display:block;">
+      <!-- <img src="assets/figure/baseline.png" style="width:60%; margin:auto; display:block;"> -->
+      <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif;">
+        <thead>
+            <tr>
+                <th style="padding: 8px; background-color: #f2f2f2;">Model</th>
+                <th style="padding: 8px; background-color: #f2f2f2;">Data</th>
+                <th style="padding: 8px; background-color: #f2f2f2;">L1 (%)</th>
+                <th style="padding: 8px; background-color: #f2f2f2;">L2 (%)</th>
+                <th style="padding: 8px; background-color: #f2f2f2;">L3 (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>VIMA</td>
+                <td>100%</td>
+                <td>81.5</td>
+                <td><b>81.5</b></td>
+                <td><b>78.7</b></td>
+            </tr>
+            <tr>
+                <td>VIMA</td>
+                <td>10%</td>
+                <td>76.3</td>
+                <td>75.8</td>
+                <td>73.2</td>
+            </tr>
+            <tr>
+                <td>VIMA</td>
+                <td>1%</td>
+                <td>36.3</td>
+                <td>34.3</td>
+                <td>15.4</td>
+            </tr>
+            <tr>
+                <td>LLaRA-7B-m</td>
+                <td>1.2%</td>
+                <td>44.6</td>
+                <td>27.7</td>
+                <td>34.2</td>
+            </tr>
+            <tr>
+                <td>LLaRA-7B-s</td>
+                <td>1.2%</td>
+                <td>78.1</td>
+                <td>73.8</td>
+                <td>70.0</td>
+            </tr>
+            <tr>
+                <td>Mipha-3B</td>
+                <td>1.2%</td>
+                <td>78.8</td>
+                <td>72.3</td>
+                <td>72.1</td>
+            </tr>
+            <tr>
+                <td colspan="5" style="border-bottom: 2px solid black;"></td>
+            </tr>
+            <tr>
+                <td>LiteVLP-s</td>
+                <td>1.2%</td>
+                <td>83.1</td>
+                <td><b>81.5</b></td>
+                <td>77.5</td>
+            </tr>
+            <tr>
+                <td>LiteVLP-m</td>
+                <td>1.2%</td>
+                <td><b>84.2</b></td>
+                <td>78.1</td>
+                <td>75.4</td>
+            </tr>
+        </tbody>
+    </table>
+     
     </div>
     <!--/ VIMA-Bench Results -->
   </section>
