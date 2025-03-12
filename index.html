@@ -197,7 +197,7 @@
       </p>
       <br>
       <!-- <img src="assets/figure/baseline.png" style="width:60%; margin:auto; display:block;"> -->
-      <style>
+      <!-- <style>
         table {
             width: 60%; /* 设置表格宽度为100% */
             border-collapse: collapse; /* 合并边框 */
@@ -307,7 +307,120 @@
                 <td>75.4</td>
             </tr>
         </tbody>
-    </table> 
+    </table>  -->
+  
+    <style>
+      table {
+          width: 60%; /* 表格宽度 */
+          border-collapse: collapse; /* 合并边框 */
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 20px;
+          margin: 0 auto; /* 水平居中 */
+      }
+  
+      th, td {
+          padding: 8px;
+          text-align: center;
+          vertical-align: middle;
+          position: relative; /* 设置为相对定位，确保 ::after 生效 */
+      }
+  
+      /* 顶部线 */
+      .top-line {
+          border-top: 2px solid black;
+      }
+  
+      /* 中间线 */
+      .middle-line {
+          border-bottom: 2px solid black;
+      }
+  
+      /* 底部线 */
+      .bottom-line {
+          border-bottom: 2px solid black;
+      }
+  
+      /* 定义短竖线，使用伪元素生成 */
+      .short-separator::after {
+          content: ""; /* 必须设置 content 才能生成伪元素 */
+          position: absolute;
+          right: 0; /* 竖线靠右 */
+          top: 25%; /* 垂直位置 */
+          height: 50%; /* 竖线长度（单元格高度的 50%） */
+          width: 1px; /* 竖线宽度 */
+          background-color: black; /* 竖线颜色 */
+      }
+  </style>
+  
+  <table>
+      <thead>
+          <tr class="top-line middle-line">
+              <th class="short-separator">Model</th>
+              <th class="short-separator">Data</th>
+              <th class="short-separator">L1 (%)</th>
+              <th class="short-separator">L2 (%)</th>
+              <th>L3 (%)</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td class="short-separator">VIMA</td>
+              <td class="short-separator">100%</td>
+              <td class="short-separator">81.5</td>
+              <td class="short-separator"><b>81.5</b></td>
+              <td><b>78.7</b></td>
+          </tr>
+          <tr>
+              <td class="short-separator">VIMA</td>
+              <td class="short-separator">10%</td>
+              <td class="short-separator">76.3</td>
+              <td class="short-separator">75.8</td>
+              <td>73.2</td>
+          </tr>
+          <tr>
+              <td class="short-separator">VIMA</td>
+              <td class="short-separator">1%</td>
+              <td class="short-separator">36.3</td>
+              <td class="short-separator">34.3</td>
+              <td>15.4</td>
+          </tr>
+          <tr>
+              <td class="short-separator">LLaRA-7B-m</td>
+              <td class="short-separator">1.2%</td>
+              <td class="short-separator">44.6</td>
+              <td class="short-separator">27.7</td>
+              <td>34.2</td>
+          </tr>
+          <tr>
+              <td class="short-separator">LLaRA-7B-s</td>
+              <td class="short-separator">1.2%</td>
+              <td class="short-separator">78.1</td>
+              <td class="short-separator">73.8</td>
+              <td>70.0</td>
+          </tr>
+          <tr>
+              <td class="short-separator">Mipha-3B</td>
+              <td class="short-separator">1.2%</td>
+              <td class="short-separator">78.8</td>
+              <td class="short-separator">72.3</td>
+              <td>72.1</td>
+          </tr>
+          <tr class="bottom-line">
+              <td class="short-separator">LiteVLP-s</td>
+              <td class="short-separator">1.2%</td>
+              <td class="short-separator">83.1</td>
+              <td class="short-separator"><b>81.5</b></td>
+              <td>77.5</td>
+          </tr>
+          <tr class="bottom-line">
+              <td class="short-separator">LiteVLP-m</td>
+              <td class="short-separator">1.2%</td>
+              <td class="short-separator"><b>84.2</b></td>
+              <td class="short-separator">78.1</td>
+              <td>75.4</td>
+          </tr>
+      </tbody>
+  </table>
   
     </div>
     <!--/ VIMA-Bench Results -->
