@@ -429,6 +429,76 @@
       </tbody>
   </table>
   
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>带有短竖线的三线表</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            position: relative;
+        }
+
+        /* 顶线 */
+        th {
+            border-top: 2px solid black;
+            border-bottom: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            position: relative;
+        }
+
+        /* 普通单元格样式 */
+        td {
+            padding: 8px;
+            text-align: left;
+            position: relative;
+        }
+
+        /* 底线 */
+        tr:last-child td {
+            border-bottom: 2px solid black;
+        }
+
+        /* 短竖线 */
+        th:not(:last-child)::after,
+        td:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            bottom: 10%;
+            right: 0;
+            width: 1px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>张三</td>
+                <td>25</td>
+                <td>男</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>30</td>
+                <td>女</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
   
     </div>
     <!--/ VIMA-Bench Results -->
