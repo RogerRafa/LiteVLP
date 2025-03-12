@@ -208,6 +208,8 @@
         th, td {
             padding: 8px; /* 单元格内边距 */
             text-align: center; /* 居中对齐 */
+            vertical-align: middle;
+            position: relative;
         }
     
         /* 顶部线 */
@@ -226,11 +228,12 @@
         }
         /* 短竖线：通过伪元素设置短竖线 */
         .short-separator::after {
+          content: ""; /* 必须设置 content 才能生成伪元素 */
           border-right: 1px solid black; /* 右侧生成竖线 */
           position: absolute;
           border-top: 0; /* 去掉顶部边框 */
           border-bottom: 0; /* 去掉底部边框 */
-          height: 10px; /* 控制竖线长度 */
+          height: 50%; /* 控制竖线长度 */
       }
     </style>
     
