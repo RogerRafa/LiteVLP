@@ -197,14 +197,43 @@
       </p>
       <br>
       <!-- <img src="assets/figure/baseline.png" style="width:60%; margin:auto; display:block;"> -->
-      <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif;">
+      <style>
+        table {
+            width: 100%; /* 设置宽度为100% */
+            border-collapse: collapse; /* 合并边框 */
+            font-family: Arial, sans-serif; /* 设置字体 */
+            font-size: 16px; /* 设置字体大小 */
+        }
+    
+        th, td {
+            border: 1px solid black; /* 单元格边框为黑色 */
+            padding: 8px; /* 设置内边距 */
+            text-align: center; /* 文字居中 */
+        }
+    
+        th {
+            background-color: #f2f2f2; /* 表头背景颜色 */
+            font-weight: bold; /* 表头加粗 */
+        }
+    
+        b {
+            font-weight: bold;
+        }
+    
+        /* 添加与图片相同的水平分隔线 */
+        .separator {
+            border-bottom: 2px solid black;
+        }
+    </style>
+    
+    <table>
         <thead>
             <tr>
-                <th style="padding: 8px; background-color: #f2f2f2;">Model</th>
-                <th style="padding: 8px; background-color: #f2f2f2;">Data</th>
-                <th style="padding: 8px; background-color: #f2f2f2;">L1 (%)</th>
-                <th style="padding: 8px; background-color: #f2f2f2;">L2 (%)</th>
-                <th style="padding: 8px; background-color: #f2f2f2;">L3 (%)</th>
+                <th>Model</th>
+                <th>Data</th>
+                <th>L1 (%)</th>
+                <th>L2 (%)</th>
+                <th>L3 (%)</th>
             </tr>
         </thead>
         <tbody>
@@ -250,8 +279,8 @@
                 <td>72.3</td>
                 <td>72.1</td>
             </tr>
-            <tr>
-                <td colspan="5" style="border-bottom: 2px solid black;"></td>
+            <tr class="separator">
+                <td colspan="5"></td>
             </tr>
             <tr>
                 <td>LiteVLP-s</td>
@@ -269,6 +298,7 @@
             </tr>
         </tbody>
     </table>
+    
      
     </div>
     <!--/ VIMA-Bench Results -->
