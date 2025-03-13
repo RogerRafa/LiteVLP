@@ -212,7 +212,7 @@
         </div>
       </div>
       <p>
-        In long horizon manipulation tasks, LiteVLP-m significantly outperforms other baseline models. We refer to CoTDiffusion to select three representative long-horizon manipulation tasks in VIMA-Bench —visual rearrangement, visual reasoning, and visual constraints. CoTDiffusion is a model specifically designed to improve performance in long-horizon manipulation tasks. However, our LiteVLP-m demonstrates superior performance in long-horizon manipulation tasks, achieving an average improvement of 18.8% over CoTDiffusion in three types of tasks. The effectiveness of our model can be attributed to the sufficient memory for past and futureexperiences, making it more capable of long-horizon manipulation.
+        In long horizon manipulation tasks, LiteVLP-m significantly outperforms other baseline models. We refer to CoTDiffusion to select three representative long-horizon manipulation tasks in VIMA-Bench —visual rearrangement, visual reasoning, and visual constraints. CoTDiffusion is a model specifically designed to improve performance in long-horizon manipulation tasks. However, our LiteVLP-m demonstrates superior performance in long-horizon manipulation tasks, achieving an average improvement of 18.8% over CoTDiffusion in three types of tasks. The effectiveness of our model can be attributed to the sufficient memory for past and future experiences, making it more capable of long-horizon manipulation.
       </p>
       <br>
       <img src="assets/figure/long-horizon.png" style="width:50%; margin:auto; display:block;">
@@ -236,7 +236,7 @@
       </div>
       <div class="column">
         <p>
-          Our method demonstrate a significant advantage on training efficiency. Specifically, we achieve an average success rate of 80.7% in just 6.1 hours of training, using 4 NVIDIA RTX 3090 GPUs. In comparison,VIMA, which is trained on 8 NVIDIA V100 GPUs, takes 24 hours and achieves an average success rate of 80.6%, while LLaRA-7B, trained on 4 NVIDIA RTX 3090 GPUs, requires 21 hours and achieves 74% on average. These results highlight the efficiency of our approach, which not only reduces training time significantly by 17.9 hours compared to VIMA and 14.9 hours compared to LLaRA-7B but also performs excellently even on less powerful GPU setups.
+          Our method demonstrate a significant advantage on training efficiency. Specifically, we achieve an average success rate of 80.7% in just 6.1 hours of training, using 4 NVIDIA RTX 3090 GPUs. In comparison, VIMA, which is trained on 8 NVIDIA V100 GPUs, takes 24 hours and achieves an average success rate of 80.6%, while LLaRA-7B, trained on 4 NVIDIA RTX 3090 GPUs, requires 21 hours and achieves 74% on average. These results highlight the efficiency of our approach, which not only reduces training time significantly by 17.9 hours compared to VIMA and 14.9 hours compared to LLaRA-7B but also performs excellently even on less powerful GPU setups.
         </p>
       </div>
       <br>
@@ -248,7 +248,7 @@
       </div>
       <div class="column">
         <p>
-          With a lightweight design, our model not only significantly reduces training time,but also accelerates inference speed, demonstrating a huge advantage on low latency. We fairly compare our LiteVLP-m with Mipha-3B and LLaRA-7B on VIMA-Bench tasks, with the same NVIDIA RTX 3090. As shown in the following figure, our LiteVLP-m achieves a superior performance with 6.8 times lower inference latency than LLaRA.This result can be attributed to two main factors: the smaller size of our model, and the effectiveness of our MOC module in shortening the input sequence.
+          With a lightweight design, our model not only significantly reduces training time, but also accelerates inference speed, demonstrating a huge advantage on low latency. We fairly compare our LiteVLP-m with Mipha-3B and LLaRA-7B on VIMA-Bench tasks, with the same NVIDIA RTX 3090. As shown in the following figure, our LiteVLP-m achieves a superior performance with 6.8 times lower inference latency than LLaRA. This result can be attributed to two main factors: the smaller size of our model, and the effectiveness of our MOC module in shortening the input sequence.
         </p>
       </div>
       <br>
